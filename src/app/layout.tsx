@@ -74,9 +74,11 @@ export const metadata: Metadata = {
     images: ["https://fana-exmp.vercel.app/og.jpg"],
   },
   twitter: {
+    card: "summary_large_image",
     title: TITLE,
     description: METADATA_DESCRIPTION,
     site: "FANA AI",
+    images: "https://fana-exmp.vercel.app/og.jpg",
   },
   alternates: {
     canonical: "/",

@@ -120,11 +120,19 @@
             width: 100%;
             aspect-ratio: 1;
         }
+
         & img {
             width: auto;
             height: auto;
             max-width: toRem(540);
             aspect-ratio: 1;
+        }
+        @media (max-width: em(450)) {
+            max-width: 100%;
+            & img {
+                max-width: 100%;
+                width: 100%;
+            }
         }
     }
     &__list {
