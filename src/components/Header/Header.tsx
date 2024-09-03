@@ -46,6 +46,7 @@ export const Header = () => {
             initial={{ opacity: 0, x: "100%" }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
+            transition={{ ease: "linear", duration: 0.2 }}
             className="menu"
           >
             <div className="menu__container">
