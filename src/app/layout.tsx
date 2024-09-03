@@ -6,12 +6,12 @@ import Head from "next/head";
 const grotesk = localFont({
   src: [
     {
-      path: "../../public/fonts/ClashGrotesk-Medium.ttf",
+      path: "./../../public/fonts/ClashGrotesk-Medium.ttf",
       weight: "500",
       style: "normal",
     },
     {
-      path: "../../public/fonts/ClashGrotesk-Semibold.ttf",
+      path: "./../../public/fonts/ClashGrotesk-Semibold.ttf",
       weight: "600",
       style: "normal",
     },
@@ -21,32 +21,32 @@ const grotesk = localFont({
 const sfpro = localFont({
   src: [
     {
-      path: "../../public/fonts/SFProText-Heavy.ttf",
+      path: "./../../public/fonts/SFProText-Heavy.ttf",
       weight: "800",
       style: "normal",
     },
     {
-      path: "../../public/fonts/SFProText-Bold.ttf",
+      path: "./../../public/fonts/SFProText-Bold.ttf",
       weight: "700",
       style: "normal",
     },
     {
-      path: "../../public/fonts/SFProText-SemiBold.ttf",
+      path: "./../../public/fonts/SFProText-SemiBold.ttf",
       weight: "600",
       style: "normal",
     },
     {
-      path: "../../public/fonts/SFProText-Medium.ttf",
+      path: "./../../public/fonts/SFProText-Medium.ttf",
       weight: "500",
       style: "normal",
     },
     {
-      path: "../../public/fonts/SFProText-Regular.ttf",
+      path: "./../../public/fonts/SFProText-Regular.ttf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../../public/fonts/SFProText-Light.ttf",
+      path: "./../../public/fonts/SFProText-Light.ttf",
       weight: "300",
       style: "normal",
     },
