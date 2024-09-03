@@ -1,0 +1,118 @@
+.comments {
+    @include adaptiveValue("padding-top", 60, 40, 1400, 800, 1);
+    @include adaptiveValue("padding-bottom", 60, 40, 1400, 800, 1);
+    // .commants__container
+
+    &__container {
+    }
+    &__title {
+        font-family: var(--second-family);
+        font-weight: 500;
+        font-size: toRem(32);
+        text-align: center;
+        color: var(--black);
+        margin-bottom: toRem(32);
+    }
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        gap: toRem(4);
+        position: relative;
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(180deg, #f9fafb 0%, rgba(249, 250, 251, 0) 100%);
+            height: toRem(60);
+            z-index: 10;
+        }
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(360deg, #f9fafb 0%, rgba(249, 250, 251, 0) 100%);
+            height: toRem(60);
+            z-index: 10;
+        }
+    }
+    & .swiper {
+        padding: 0 10px;
+    }
+    & .swiper-wrapper {
+        height: toRem(500);
+
+        -webkit-transition-timing-function: linear !important;
+        transition-timing-function: linear !important;
+    }
+    & .swiper-slide {
+        height: auto;
+    }
+}
+.comment {
+    cursor: pointer;
+    border-radius: toRem(45);
+    max-width: toRem(425);
+    width: 100%;
+    padding: toRem(30);
+    background: var(--white);
+    box-shadow:
+        0 1px 3px -1px rgba(0, 0, 0, 0.05),
+        0 2px 10px 0 rgba(50, 50, 93, 0.1);
+
+    // .comment__header
+
+    &__header {
+        display: flex;
+        gap: toRem(8);
+        & img {
+            width: toRem(44);
+            height: toRem(44);
+        }
+    }
+
+    // .comment__info
+
+    &__info {
+        margin-bottom: toRem(22);
+    }
+
+    // .comment__name
+
+    &__name {
+        font-family: var(--font-family);
+        font-weight: 700;
+        font-size: toRem(16);
+        line-height: 120%;
+        color: var(--black);
+        margin-bottom: toRem(2);
+    }
+
+    // .comment__mail
+
+    &__mail {
+        font-family: var(--font-family);
+        font-weight: 500;
+        font-size: toRem(14);
+        line-height: 120%;
+        color: var(--grey);
+        opacity: 0.5;
+    }
+
+    // .comment__text
+
+    &__text {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: toRem(16);
+        line-height: 140%;
+        color: var(--black);
+    }
+    &__svg {
+    }
+}

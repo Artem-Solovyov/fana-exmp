@@ -1,0 +1,67 @@
+.possibilities {
+    // .possibilities__container
+
+    &__container {
+        display: flex;
+        justify-content: space-evenly;
+        @media (max-width: em(1000)) {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            row-gap: toRem(24);
+        }
+        @include adaptiveValue("padding-bottom", 60, 40, 1400, 900, 1);
+    }
+
+    // .possibilities__title
+
+    &__title {
+        font-family: var(--second-family);
+        font-weight: 500;
+        font-size: toRem(32);
+        color: var(--black);
+        max-width: toRem(565);
+        @media (max-width: em(1000)) {
+            max-width: none;
+        }
+    }
+
+    // .possibilities__body
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        row-gap: toRem(40);
+        gap: toRem(24);
+    }
+
+    // .possibilities__item
+
+    &__item {
+    }
+
+    // .possibilities__count
+
+    &__count {
+        display: inline-block;
+        font-family: var(--second-family);
+        font-weight: 500;
+        font-size: toRem(64);
+        line-height: 100%;
+        background: linear-gradient(245deg, #007a5a 0%, #0f5164 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    // .possibilities__text
+
+    &__text {
+        font-family: var(--font-family);
+        font-weight: 500;
+        font-size: toRem(16);
+        line-height: 100%;
+        text-transform: uppercase;
+        color: var(--black);
+    }
+}

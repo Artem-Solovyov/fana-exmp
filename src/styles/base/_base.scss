@@ -1,0 +1,99 @@
+// НАСТРОЙКИ
+
+:root {
+    --black: #232324;
+    --white: #fff;
+    --grey: #73737b;
+    --light-grey: #f7f8fa;
+    --blue: #1264a3;
+    --deep-green: #007a5a;
+    --red: #e01e5a;
+    --avatarbg: #fff2df;
+    --aimagine-main: #fece00;
+    --hover-semi-gray: #fafafa;
+    --text-color: #363636;
+    --button-text: #363636;
+    --stroke: #ddd;
+    --semi-gray-bg: #f7f7f7;
+    --scrollbar-width: 0px;
+}
+// Минимальная ширина страницы
+$minWidth: 320;
+// Ширина полотна (макета)
+$maxWidth: 1920;
+// Ширина ограничивающего контейнера (0 = нет ограничения)
+$maxWidthContainer: 1500;
+// Общий отступ у контейнера
+// (30 = по 15px слева и справа, 0 = нет отступа)
+$containerPadding: 16;
+
+// Ширина срабатывания первого брейкпоинта
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+// Брейк-поинты
+$pc: em($containerWidth); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
+$tablet: em(991.98); // Планшеты, некоторые телефоны в горизонтальном положении
+$mobile: em(767.98); // Телефоны L
+$mobileSmall: em(479.98); // Телефоны S
+
+// Тип адаптива:
+// 1 = отзывчивость (у контейнера нет брейкпоинтов),
+// 2 = по брейк-поинтам (контейнер меняет свою ширину по брейк-поинтам)
+$responsiveType: 1;
+
+// Обнуление и общие параметры ============================================================================================================================================================================================== =============================================================================================== ===============================================================================================
+html {
+    scroll-behavior: smooth;
+}
+body {
+    overflow-x: hidden;
+    .lock & {
+        overflow: hidden;
+        // overflow: hidden;
+        touch-action: none;
+        padding-right: var(--scrollbar-width);
+        & header {
+            padding-right: var(--scrollbar-width);
+        }
+        & .modal {
+            padding-right: var(--scrollbar-width);
+        }
+    }
+    .loaded & {
+    }
+
+    font-family: var(--font-family);
+    font-size: toRem(14);
+    color: var(--white);
+    background: #f9fafb;
+}
+
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    @media (min-width: em(961)) {
+        overflow: hidden;
+    }
+
+    main {
+        flex: 1 1 auto;
+    }
+    > * {
+        min-width: 0;
+    }
+}
+
+@if ($responsiveType==1) {
+    [class*="__container"] {
+        @if ($maxWidthContainer>0) {
+            max-width: toRem($maxWidthContainer);
+            box-sizing: content-box;
+            margin: 0 auto;
+        }
+        @if ($containerPadding>0) {
+            @include adaptiveValue("padding-right", 30, 8, 1300, 400, 1);
+            @include adaptiveValue("padding-left", 30, 8, 1300, 400, 1);
+        }
+    }
+}

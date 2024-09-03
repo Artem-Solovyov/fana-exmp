@@ -1,0 +1,143 @@
+.form {
+    display: flex;
+    align-items: center;
+
+    gap: toRem(16);
+    @media (max-width: em(1050)) {
+        justify-content: center;
+    }
+    @media (max-width: em(660)) {
+        flex-direction: column;
+        width: 100%;
+        max-width: toRem(500);
+        margin: 0 auto;
+    }
+    // .form__input
+    &__label {
+        max-width: toRem(330);
+        @media (max-width: em(660)) {
+            max-width: none;
+        }
+        width: 100%;
+        flex: 1;
+        position: relative;
+        .form.error & {
+            &::before {
+                content: "*Invalid email";
+                position: absolute;
+                display: block;
+                right: toRem(8);
+                bottom: 50%;
+                transform: translate(0, 50%);
+                font-family: var(--font-family);
+                font-weight: 400;
+                font-size: toRem(14);
+                line-height: 125%;
+                text-align: center;
+                color: #ff3951;
+                width: toRem(90);
+                height: toRem(15);
+                z-index: 100;
+                @media (max-width: em(660)) {
+                    transform: translate(50%, 0);
+                    bottom: 0;
+                    right: 50%;
+                    font-size: toRem(12);
+                }
+            }
+        }
+        .form.fail & {
+            &::before {
+                content: "*Failed!";
+                position: absolute;
+                display: block;
+                right: toRem(8);
+                bottom: 50%;
+                transform: translate(0, 50%);
+                font-family: var(--font-family);
+                font-weight: 400;
+                font-size: toRem(14);
+                line-height: 125%;
+                text-align: center;
+                color: #ff3951;
+                width: toRem(90);
+                height: toRem(15);
+                z-index: 100;
+                @media (max-width: em(660)) {
+                    transform: translate(50%, 0);
+                    bottom: 0;
+                    right: 50%;
+                    font-size: toRem(12);
+                }
+            }
+        }
+        .form.success & {
+            &::before {
+                content: "*Success!";
+                position: absolute;
+                display: block;
+                right: toRem(8);
+                bottom: 50%;
+                transform: translate(0, 50%);
+                font-family: var(--font-family);
+                font-weight: 400;
+                font-size: toRem(14);
+                line-height: 125%;
+                text-align: center;
+                color: var(--deep-green);
+                width: toRem(90);
+                height: toRem(15);
+                z-index: 100;
+                @media (max-width: em(660)) {
+                    transform: translate(50%, 0);
+                    bottom: 0;
+                    right: 50%;
+                    font-size: toRem(12);
+                }
+            }
+        }
+    }
+
+    &__input {
+        width: 100%;
+        border: 1px solid var(--light-grey);
+        border-radius: toRem(8);
+        padding: toRem(18) toRem(8);
+        backdrop-filter: blur(4px);
+        background: rgba(57, 59, 58, 0.77);
+        // background: rgba(255, 255, 255, 0.1);
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 125%;
+
+        text-align: left;
+
+        @media (max-width: em(660)) {
+            max-width: toRem(500);
+            text-align: center;
+        }
+        &::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        .form.error & {
+            border: 1px solid #ff3951;
+        }
+        .form.fail & {
+            border: 1px solid #ff3951;
+        }
+        .form.success & {
+            border: 1px solid var(--deep-green);
+        }
+    }
+
+    // .form__button
+
+    &__button {
+        @media (max-width: em(660)) {
+            width: 100%;
+        }
+    }
+}
+.hero-button {
+}

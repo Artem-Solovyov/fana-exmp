@@ -1,0 +1,25 @@
+[
+  {
+    "title": "Docs",
+    "path": "https://docs.fana.ai/",
+    "target":"_blanc"
+    
+  },
+  {
+    "title": "Blogs",
+    "path": "https://aiblog.fana.ai/",
+    "target":"_blanc"
+  },
+  {
+    "title": "About Fana",
+    "path": "#about"
+  },
+  {
+    "title": "Use Cases",
+    "path": "#use-cases"
+  },
+  {
+    "title": "FAQ",
+    "path": "#faq"
+  }
+]

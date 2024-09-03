@@ -1,0 +1,192 @@
+.footer {
+    background: var(--black);
+    @include adaptiveValue("padding-top", 60, 24, 1400, 400, 1);
+    @include adaptiveValue("padding-bottom", 60, 24, 1400, 400, 1);
+    // .footer__container
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        gap: toRem(16);
+        @media (max-width: em(1100)) {
+            flex-direction: column;
+            gap: toRem(24);
+        }
+        position: relative;
+        z-index: 5;
+    }
+
+    // .footer__column
+    &__left {
+        display: flex;
+        width: 100%;
+        max-width: 50%;
+        justify-content: space-between;
+        @media (max-width: em(1100)) {
+            max-width: 100%;
+        }
+        @media (max-width: em(660)) {
+            flex-direction: column;
+        }
+    }
+
+    &__column {
+        display: flex;
+        flex-direction: column;
+        max-width: toRem(430);
+    }
+    &__tab {
+        &-mob {
+            display: none;
+        }
+        @media (max-width: em(660)) {
+            display: none;
+            &-mob {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+    }
+
+    // .footer__text
+
+    &__text {
+        margin-top: toRem(24);
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: toRem(16);
+        line-height: 125%;
+        color: var(--white);
+        & span {
+            font-weight: 600;
+        }
+        flex: 1;
+    }
+
+    // .footer__copy
+
+    &__copy {
+        font-family: var(--font-family);
+        font-weight: 400;
+        @include adaptiveValue("font-size", 16, 14, 800, 400, 1);
+        line-height: 125%;
+        color: var(--light-grey);
+        margin-top: toRem(24);
+        &-tab {
+            display: none;
+        }
+        @media (max-width: em(1100)) {
+            display: none;
+            &-tab {
+                display: block;
+                margin-top: 0;
+            }
+            text-align: center;
+        }
+    }
+
+    // .footer__nav
+
+    &__nav {
+        display: flex;
+        flex-direction: column;
+        @include adaptiveValue("gap", 17, 24, 1400, 400, 1);
+        @media (max-width: em(1100)) {
+            flex-direction: row;
+        }
+        @media (max-width: em(660)) {
+            flex-direction: column;
+        }
+    }
+
+    // .footer__item
+
+    &__item {
+        font-family: var(--font-family);
+        font-weight: 400;
+        @include adaptiveValue("font-size", 16, 14, 800, 400, 1);
+        line-height: 125%;
+        color: var(--white);
+        transition: all 0.2s ease;
+        &:hover {
+            text-shadow:
+                0 5px 10px -2px rgba(0, 0, 0, 0.1),
+                0 15px 45px 0 rgba(50, 50, 93, 0.25);
+            color: var(--light-grey);
+        }
+        text-wrap: nowrap;
+    }
+
+    // .footer__actions
+
+    &__actions {
+        width: 100%;
+        max-width: toRem(500);
+        @media (max-width: em(1100)) {
+            max-width: none;
+            & .form__label {
+                max-width: none;
+            }
+        }
+        @media (max-width: em(660)) {
+            & .form {
+                max-width: none;
+            }
+            & .form__input {
+                max-width: none;
+            }
+        }
+    }
+
+    // .footer__actions-title
+
+    &__actions-title {
+        font-family: var(--font-family);
+        font-weight: 400;
+        @include adaptiveValue("font-size", 16, 14, 800, 400, 1);
+        line-height: 125%;
+        color: var(--white);
+        margin-bottom: 8px;
+    }
+
+    // .footer__socials
+
+    &__socials {
+        display: flex;
+        align-items: center;
+        margin-top: toRem(24);
+        gap: toRem(16);
+        &-tab {
+            display: none;
+        }
+        @media (max-width: em(1100)) {
+            display: none;
+            &-tab {
+                display: flex;
+                justify-content: flex-end;
+            }
+        }
+    }
+
+    // .footer__social
+
+    &__social {
+        transition: opacity 0.2s ease;
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+    position: relative;
+    overflow: hidden;
+    &__bg {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+        border-radius: 100%;
+        filter: blur(60px);
+        fill: rgba(217, 217, 217, 0.5);
+        z-index: 0;
+    }
+}

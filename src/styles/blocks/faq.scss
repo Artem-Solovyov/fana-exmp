@@ -1,0 +1,111 @@
+.faq {
+    @include adaptiveValue("padding-bottom", 60, 40, 1400, 800, 1);
+    // .faq__container
+
+    &__container {
+    }
+
+    // .faq__title
+
+    &__title {
+        font-family: var(--second-family);
+        font-weight: 500;
+        font-size: toRem(32);
+        text-align: center;
+        color: var(--black);
+        margin-bottom: toRem(24);
+    }
+
+    // .faq__content
+
+    &__content {
+        max-width: toRem(992);
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: toRem(16);
+    }
+    &__item {
+        border-bottom: 1px solid var(--grey);
+        padding: toRem(8) 0px;
+    }
+    &__question {
+        font-family: var(--second-family);
+        font-weight: 500;
+        font-size: toRem(24);
+        line-height: 100%;
+        color: var(--black);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: toRem(16);
+    }
+    &__answer {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: toRem(16);
+        line-height: 140%;
+        color: var(--black);
+        margin-top: toRem(8);
+        & a {
+            text-decoration: underline;
+        }
+        & li {
+            margin: 4px 0;
+        }
+        & ul {
+            padding-left: 2rem;
+            list-style-type: disc;
+        }
+        & ol {
+            padding-left: 2rem;
+            list-style-type: disc;
+        }
+        & ul li {
+            list-style-type: disc;
+        }
+        & ol li {
+            list-style-type: decimal;
+        }
+    }
+    &__item-title {
+    }
+    &__plus {
+        width: toRem(14);
+        height: toRem(14);
+        position: relative;
+        min-width: toRem(14);
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            height: 100%;
+            width: toRem(2);
+            background-color: #0f5164;
+            border-radius: 2px;
+            transform: translate(-50%, 0);
+            transition: all 0.3s ease;
+            .faq__item.open & {
+                transform: translate(-50%, 0) rotate(90deg);
+                opacity: 0;
+            }
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            height: toRem(2);
+            width: 100%;
+            background-color: #0f5164;
+            border-radius: 2px;
+            transform: translate(0, -50%);
+            transition: all 0.3s ease;
+            .faq__item.open & {
+                transform: translate(0, -50%) rotate(180deg);
+            }
+        }
+    }
+}
