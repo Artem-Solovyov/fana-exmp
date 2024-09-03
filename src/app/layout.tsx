@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     siteName: "FANA AI",
     type: "website",
     locale: "en_US",
-    images: ["/og.jpg"],
+    images: ["https://fana-exmp.vercel.app/og.jpg"],
   },
   twitter: {
     title: TITLE,
