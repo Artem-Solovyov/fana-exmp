@@ -7,7 +7,7 @@ export const subscribeToMailerLite = async (email: string) => {
     },
   };
 
-  const result = await fetch("https://connect.mailerlite.com/api", {
+  const result = await fetch("https://api.mailerlite.com/api/v2/groups/111158149250025236/subscribers", {
     method: "POST",
     cache: "no-cache",
     headers: {
