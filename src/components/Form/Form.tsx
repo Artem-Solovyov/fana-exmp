@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import { subscribeToMailerLite } from "@/services";
 import { validateEmail } from "@/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
