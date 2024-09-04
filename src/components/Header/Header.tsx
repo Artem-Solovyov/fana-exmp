@@ -62,6 +62,7 @@ export const Header = () => {
                       href={item.path}
                       target={item.target ? item.target : ""}
                       className="menu__item"
+                      onClick={() => setIsMenu(false)}
                     >
                       {item.title}
                     </Link>
@@ -70,10 +71,20 @@ export const Header = () => {
                 <Form />
               </div>
               <div className="menu__socials">
-                <Link href="https://www.linkedin.com/company/fana-ai" target="_blank" className="menu__social">
+                <Link
+                  onClick={() => setIsMenu(false)}
+                  href="https://www.linkedin.com/company/fana-ai"
+                  target="_blank"
+                  className="menu__social"
+                >
                   <Image src="./in.svg" width={40} height={40} alt="Icon" />
                 </Link>
-                <Link href="https://twitter.com/fana_ai" target="_blank" className="menu__social">
+                <Link
+                  onClick={() => setIsMenu(false)}
+                  href="https://twitter.com/fana_ai"
+                  target="_blank"
+                  className="menu__social"
+                >
                   <Image src="./x.svg" width={40} height={40} alt="Icon" />
                 </Link>
               </div>
