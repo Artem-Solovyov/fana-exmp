@@ -34,8 +34,17 @@ export const Form = () => {
     }
 
     if (isValid) {
-      const result = await subscribeToMailerLite(email as string);
-      if (result.success) {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
         setIsModal(true);
       } else {
         setIsSubscriptionFailed(true);
